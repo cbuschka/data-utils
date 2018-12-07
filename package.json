@@ -1,0 +1,39 @@
+{
+  "name": "@cbuschka/data-utils",
+  "version": "1.0.0",
+  "description": "Collection of data-utils.",
+  "author": "cbuschka@gmail.com",
+  "homepage": "https://github.com/cbuschka/data-utils",
+  "repository": "cbuschka/data-utils",
+  "main": "dist/legacy/index.js",
+  "module": "src/index.js",
+  "scripts": {
+    "clean": "rimraf dist && mkdirp dist/legacy",
+    "build:legacy": "BABEL_ENV=legacy babel src --source-maps --no-comments --out-dir dist/legacy/",
+    "build": "npm run clean && run-p build:**",
+    "test": "jest --config jest.config.js --updateSnapshot",
+    "test-watch": "jest --config jest.config.js --updateSnapshot --watchAll --notify",
+    "release": "npm run build && npm publish --access public"
+  },
+  "keywords": [
+    "es6",
+    "util"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "^7.0.0-bridge",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.1.1",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@babel/runtime": "^7.0.0"
+  }
+}

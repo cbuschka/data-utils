@@ -1,0 +1,15 @@
+{
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "browsers": ["> 1%", "since 2015", "ie >= 11"]
+            },
+            "spec": true,
+            "modules": "commonjs",
+            "useBuiltIns": "usage"
+          }
+        ]
+      ]
+}
