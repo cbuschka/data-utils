@@ -32,3 +32,19 @@ it('set modified object sub prop', () => {
 
     expect(data.prop.sub).toEqual(2);
 });
+
+it('set adds object as array item', () => {
+    const data = {prop: {sub: []}};
+
+    set('prop.sub[0].value', data, 2)
+
+    expect(data.prop.sub[0].value).toEqual(2);
+});
+
+it('set adds value as array item', () => {
+    const data = {prop: {sub: []}};
+
+    set('prop.sub[0]', data, 2)
+
+    expect(data.prop.sub[0]).toEqual(2);
+});
