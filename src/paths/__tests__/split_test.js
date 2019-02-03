@@ -31,3 +31,14 @@ it('split detects dangling array index', () => {
 it('split detects missing dot', () => {
     expect(() => split('a[1]b')).toThrow(Error);
 });
+
+it('split arrays indexes are ints', () => {
+
+    const path = split('group4.photos[0].irgendein_photo');
+
+    expect(path[0]).toBe('group4');
+    expect(path[1]).toBe('photos');
+    expect(path[2]).toBe(0);
+    expect(Number.isInteger(path[2])).toBe(true);
+    expect(path[3]).toBe('irgendein_photo');
+});

@@ -6,7 +6,7 @@ export const set = (path, target, value) => {
     for (let i = 0; i < parts.length - 1; ++i) {
 
         if (!curr.hasOwnProperty(parts[i])) {
-            curr[parts[i]] = Number.isInteger(parts[i]) ? [] : {};
+            curr[parts[i]] = Number.isInteger(parts[i + 1]) ? [] : {};
         }
         curr = curr[parts[i]];
     }
