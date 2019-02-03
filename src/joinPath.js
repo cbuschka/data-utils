@@ -9,7 +9,9 @@ export function joinPath(...args) {
     const parts = [];
     for (let i = 0; i < args.length; ++i) {
         const arg = args[i];
-        if (isInteger(arg)) {
+        if (arg === '') {
+            // skipped
+        } else if (isInteger(arg)) {
             parts.push('[' + arg + ']');
         } else if (isNonEmptyString(arg)) {
             if (parts.length > 0) {
