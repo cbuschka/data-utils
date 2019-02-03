@@ -1,6 +1,6 @@
 const EOF = {};
 
-export const split = (string) => {
+export const splitPath = (string) => {
 
     const path = [];
     let prevPos = 0;

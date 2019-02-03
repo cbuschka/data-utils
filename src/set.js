@@ -1,4 +1,4 @@
-import {split as splitPath} from './paths/split';
+import {splitPath} from './splitPath';
 
 export const set = (path, target, value) => {
     const parts = splitPath(path);
