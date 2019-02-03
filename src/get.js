@@ -1,5 +1,9 @@
 import {splitPath} from './splitPath';
 
+const isUndefined = (x) => {
+    return typeof x === 'undefined';
+};
+
 export const get = (path, target, defaultValue = undefined) => {
     const parts = splitPath(path);
     let curr = target;
@@ -12,5 +16,6 @@ export const get = (path, target, defaultValue = undefined) => {
         }
         curr = curr[parts[i]];
     }
-    return curr[parts[parts.length - 1]] || defaultValue;
+    const value = curr[parts[parts.length - 1]];
+    return !isUndefined(value) ? value : defaultValue;
 };
